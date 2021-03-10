@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 10:59:45 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:33:24 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:11:32 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void     ft_copied_map_parsing(t_all *all)
     ft_check_map(all);     
     ft_load_sprite(all);
     ft_check_errors(all);
-//    if ()
+    ft_ray(all);
 }
 
 int     ft_map_parsing(char *mapname, t_all *all)

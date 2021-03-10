@@ -20,7 +20,8 @@ SRCS = srcs/cub3d.c \
 		srcs/parse_map.c \
 		srcs/check_map_zero.c \
 		test.c \
-
+		srcs/raycasting_init.c \
+		srcs/raycating.c \
 
 OBJ = $(SRCS:.c=.o)
 

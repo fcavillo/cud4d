@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:12:46 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:48:30 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@
 #define BLU  "\x1B[34m"
 #define MAG  "\x1B[35m"
 # define BUFFER_SIZE	4096
+
+typedef struct s_ray
+{
+	double			posx;
+	double			posy;
+	double			dirx;
+	double			diry;
+	double			planx;
+	double			plany;
+    int             stepx;
+    int             stepy;
+}               t_ray;
+
 
 typedef struct  s_map
 {
@@ -76,6 +89,7 @@ typedef struct  s_all
     t_win   win;
     t_tex   tex;
 	t_sprite	*sprite;
+    t_ray       ray;
 }           t_all; 
 
 
@@ -111,6 +125,8 @@ int    ft_check_map(t_all *all);
 int     ft_check_map_zero(t_all *all, int i, int j);
 void	free_all(t_all *all);
 void		ft_check_errors(t_all *all);
+void    ft_ray_init(t_all *all);
+int     ft_ray(t_all *all);
 
 
 

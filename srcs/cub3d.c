@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:45:56 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:05:04 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:06:38 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,9 @@ int     main(int ac, char **av)
     }
     else
         printf("%sError\nInvalid Args\n", RED);\
-    printf("%sTESTING\n", GRN);
-    test(&all);
-    printf("%sTHE TESTING HAS BEEN TESTED\n", GRN);
+    //printf("%sTESTING\n", GRN);
+    //test(&all);
+    //printf("%sTHE TESTING HAS BEEN TESTED\n", GRN);
     free_all(&all);
     printf("%sThe End\n", YEL);
     return(0);
