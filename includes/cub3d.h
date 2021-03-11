@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/10 15:48:30 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:28:37 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <string.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <mlx.h>
 
 #define RED "\x1B[31m"
 #define GRN  "\x1B[32m"
@@ -39,6 +40,13 @@ typedef struct s_ray
     int             stepx;
     int             stepy;
 }               t_ray;
+
+typedef struct s_data
+{
+    void       *mlx_ptr;
+    int         screenx;
+    int         screeny;
+}               t_data;
 
 
 typedef struct  s_map
@@ -90,6 +98,7 @@ typedef struct  s_all
     t_tex   tex;
 	t_sprite	*sprite;
     t_ray       ray;
+    t_data      data;
 }           t_all; 
 
 

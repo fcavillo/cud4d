@@ -24,9 +24,12 @@ SRCS = srcs/cub3d.c \
 		srcs/raycating.c \
 
 OBJ = $(SRCS:.c=.o)
+CFLAGS+=-I $(MLX_DIR)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(MLX_DIR)/$(MLX) -lm -lbsd -lX11 -lXext
+	@echo $(NAME) : created.
+
 
 all : $(NAME)
 
