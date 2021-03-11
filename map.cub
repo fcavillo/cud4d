@@ -1,12 +1,12 @@
    R         1920 1080
-NO ./path_to_the_north_texture.xpm
-SO   ./path_to_the_south_texture.xpm
-EA ./path_to_the_east_texture.xpm
+NO ./textures/greystone.xpm
+SO   ./textures/greystone.xpm
+EA ./textures/greystone.xpm
 
-S ./path_to_the_sprite_texture.xpm
+S ./textures/greystone.xpm
 
 F 255,100,65
-WE ./path_to_the_west_texture.xpm
+WE ./textures/greystone.xpm
 
 C    225   ,         30 , 0
 

@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/11 11:28:37 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/11 15:34:24 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,19 @@ typedef struct s_ray
 typedef struct s_data
 {
     void       *mlx_ptr;
+    void        *mlx_win;
     int         screenx;
     int         screeny;
+    void        *img;
+    int         width;
+    int         height;
+    int         *addr;
+	int			*addr2;
+	void		*img2;
+    int         endian;
+    int         bits_per_pixel;
+    int         line_length;
+    
 }               t_data;
 
 
@@ -88,6 +99,8 @@ typedef struct s_tex
     int    f;
 }              t_tex;
 
+
+
 typedef struct  s_all
 {
     int     save;
@@ -99,6 +112,7 @@ typedef struct  s_all
 	t_sprite	*sprite;
     t_ray       ray;
     t_data      data;
+    t_data      texture[5];
 }           t_all; 
 
 
