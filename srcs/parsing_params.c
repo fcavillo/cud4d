@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 09:29:52 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 09:29:53 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:35:42 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void     ft_res(t_all *all, char *line, int *i)
     (*i)++;
     all->win.x = ft_atoi(line, i);
     all->win.y = ft_atoi(line, i);
-    if (all->win.x > 2560)
-        all->win.x = 2560;
-    if (all->win.y > 1400)
-        all->win.y = 1400;
+//    if (all->win.x > 2560)
+//        all->win.x = 2560;
+ //   if (all->win.y > 1400)
+//        all->win.y = 1400;
     if (all->win.x <= 0 || all->win.y <= 0 || line[*i] != '\0')
     {
         all->err = 2;
