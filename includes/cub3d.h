@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/11 15:34:24 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:56:50 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,14 @@
 #define YEL  "\x1B[33m"
 #define BLU  "\x1B[34m"
 #define MAG  "\x1B[35m"
-# define BUFFER_SIZE	4096
+#define BUFFER_SIZE	4096
+#define KEY_ESCAPE 65307
+#define KEY_ROTATE_LEFT 65361
+#define KEY_ROTATE_RIGHT 65363
+#define KEY_FORWARD 119
+#define KEY_BACK 115
+#define KEY_RIGHT 100
+#define KEY_LEFT 97
 
 typedef struct s_ray
 {
@@ -39,6 +46,13 @@ typedef struct s_ray
 	double			plany;
     int             stepx;
     int             stepy;
+    int             x;
+    int				hit; //was a wall hit
+	int				side; //NS or EW
+	double			perpwalldist; //length of ray from one x or y-side to next x or y-side
+	double			raydirx;
+	double			raydiry;
+	double			camerax;
 }               t_ray;
 
 typedef struct s_data
@@ -56,6 +70,12 @@ typedef struct s_data
     int         endian;
     int         bits_per_pixel;
     int         line_length;
+    int     forward;
+    int     backward;
+    int     left;
+    int     right;
+    int     rotate_left;
+    int     rotate_right;
     
 }               t_data;
 
@@ -150,11 +170,10 @@ void	free_all(t_all *all);
 void		ft_check_errors(t_all *all);
 void    ft_ray_init(t_all *all);
 int     ft_ray(t_all *all);
-
-
-
-
-
+int		ft_free_mlx(t_all *all);
+int     ft_press_key(int key, t_all *all);
+int     ft_raycast(t_all *all);
+void    ft_ray_init_2(t_all *all);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:48:17 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:31:47 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:27:36 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,11 @@ void    ft_init(t_all *all)
     all->map.x = 0;
     all->map.y = 0;
     all->map.cub = NULL;
+    all->data.forward = 0;
+    all->data.backward = 0;
+    all->data.left = 0;
+    all->data.right = 0;
+    all->data.rotate_right = 0;
+    all->data.rotate_left = 0;
     ft_init_2(all);
 }

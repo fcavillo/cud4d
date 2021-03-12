@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:03:46 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/10 15:21:02 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:28:48 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ void	ft_init_dir(t_all *all)
 		all->ray.diry = -1;
 		all->ray.planx = -0.66;
     }	
+}
+
+void    ft_ray_init_2(t_all *all)
+{
+    all->ray.hit = 0;
+    all->ray.perpwalldist = 0;
+    all->ray.camerax = 2 * all->ray.x / (double)all->win.x - 1;
+    all->ray.raydirx = all->ray.raydirx / all->ray.planx * all->ray.camerax;
+    all->ray.raydiry = all->ray.raydiry / all->ray.plany * all->ray.camerax;
+    
 }
 
 void    ft_ray_init(t_all *all)

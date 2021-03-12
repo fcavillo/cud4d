@@ -6,11 +6,31 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:13:58 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/04 10:24:58 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:46:49 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
+
+int		ft_free_mlx(t_all *all)
+{
+	ft_error(all, "MLX error?\n");
+	if (all->data.img)
+		mlx_destroy_image(all->data.mlx_ptr, all->data.img);
+	if (all->texture[0].img)
+		mlx_destroy_image(all->data.mlx_ptr, all->texture[0].img);
+	if (all->texture[1].img)
+		mlx_destroy_image(all->data.mlx_ptr, all->texture[1].img);
+	if (all->texture[2].img)
+		mlx_destroy_image(all->data.mlx_ptr, all->texture[2].img);
+	if (all->texture[3].img)
+		mlx_destroy_image(all->data.mlx_ptr, all->texture[3].img);
+	if (all->texture[4].img)
+		mlx_destroy_image(all->data.mlx_ptr, all->texture[4].img);
+	if (all->data.mlx_win)
+		mlx_destroy_window(all->data.mlx_ptr, all->data.mlx_win);
+	exit(0);
+}
 
 void    free_all_2(t_all *all)
 {

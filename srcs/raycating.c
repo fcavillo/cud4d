@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:09:32 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/11 15:33:45 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:31:27 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void    ft_set_textures_addr(t_all *all)
     all->texture[4].addr = (int *)mlx_get_data_addr(all->texture[4].img,
 		&all->texture[4].bits_per_pixel,
 		&all->texture[4].line_length, &all->texture[4].endian);
-
 }
 
 
@@ -88,6 +87,12 @@ int     ft_ray(t_all *all)
             "Cuba");
     all->data.img2 = mlx_new_image(all->data.mlx_ptr, all->win.x, all->win.y);
     all->data.addr2 = (int *)mlx_get_data_addr(all->data.img, 
-        &all->data.bits_per_pixel, &all->data.line_length, &all->data.endian);    
+        &all->data.bits_per_pixel, &all->data.line_length, &all->data.endian); 
+    mlx_hook(all->data.mlx_win, 33, 1L << 17, ft_free_mlx, all);   //whut
+    mlx_hook(all->data.mlx_win, 2, 1L <<0, ft_press_key, all);
+    mlx_loop_hook(all->data.mlx_ptr, ft_raycast, all);
+
+
+    
     return (0);
 }

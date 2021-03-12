@@ -22,6 +22,8 @@ SRCS = srcs/cub3d.c \
 		test.c \
 		srcs/raycasting_init.c \
 		srcs/raycating.c \
+		srcs/keys.c \
+		srcs/raycasting_utils.c \
 
 OBJ = $(SRCS:.c=.o)
 CFLAGS+=-I $(MLX_DIR)
