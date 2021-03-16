@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 09:48:17 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/12 14:27:36 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:10:44 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void    ft_init_2(t_all *all)
     all->map.emptyline = 0;
     all->err = 0;
     all->err2 = 0;
+    all->spr.order = NULL;
+	all->spr.dist = NULL;
+	all->spr.zbuffer = NULL;
 }
 
 void    ft_init(t_all *all)

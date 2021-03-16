@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/16 11:56:51 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:08:23 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,27 @@ typedef struct	s_sprite
 	int		y;
 }			t_sprite;
 
+typedef struct s_spr
+{
+	int				nbspr;
+	int				*order;
+	double			*dist;
+	double			spritex;
+	double			spritey;
+	double			invdet;
+	double			transformx;
+	double			transformy;
+	int				spritescreenx;
+	int				spriteheight;
+	int				drawstartx;
+	int				drawstarty;
+	int				drawendy;
+	int				drawendx;
+	int				spritewidth;
+	double			*zbuffer;
+}           t_spr;
+
+
 typedef struct s_tex
 {
     char    *n;
@@ -151,6 +172,7 @@ typedef struct  s_all
     t_ray       ray;
     t_data      data;
     t_data      texture[5];
+    t_spr       spr;
 }           t_all; 
 
 

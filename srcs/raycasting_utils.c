@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:32:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/16 10:16:20 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:11:49 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,12 @@ int     ft_raycast(t_all *all)
         ft_ray_init_2(all);
         ft_step_sidedist(all);
         ft_column_color(all);
-        
+        all->spr.zbuffer[all->ray.x] = all->ray.perpwalldist;
+        all->ray.x++;
     }
+ //   ft_spr(all); A FAIREEEEE
+
+
+    
     return (0);
 }
