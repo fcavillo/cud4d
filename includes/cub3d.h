@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 11:20:11 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/12 14:56:50 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/16 11:56:51 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <mlx.h>
+# include <math.h>
 
 #define RED "\x1B[31m"
 #define GRN  "\x1B[32m"
@@ -53,6 +54,17 @@ typedef struct s_ray
 	double			raydirx;
 	double			raydiry;
 	double			camerax;
+    int				mapx;//current square
+	int				mapy;//current square
+    double			movespeed;
+	double			rotspeed;
+	double			deltadistx;
+	double			deltadisty;
+    double			sidedistx;
+	double			sidedisty;
+    int				lineheight;
+	int				drawstart;
+	int				drawend;
 }               t_ray;
 
 typedef struct s_data
@@ -117,6 +129,12 @@ typedef struct s_tex
     char    *spr;
     int    c;
     int    f;
+	int				texdir;
+	double			wallx;
+	int				texx;
+	int				texy;
+	double			step;
+	double			texpos;
 }              t_tex;
 
 
@@ -174,6 +192,11 @@ int		ft_free_mlx(t_all *all);
 int     ft_press_key(int key, t_all *all);
 int     ft_raycast(t_all *all);
 void    ft_ray_init_2(t_all *all);
+void    ft_step_sidedist(t_all *all);
+void    ft_column_color(t_all *all);
+void	ft_init_tex(t_all *all);
+
+
 
 
 

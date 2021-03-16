@@ -6,7 +6,7 @@
 /*   By: fcavillo <fcavillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:03:46 by fcavillo          #+#    #+#             */
-/*   Updated: 2021/03/12 15:28:48 by fcavillo         ###   ########.fr       */
+/*   Updated: 2021/03/16 09:35:21 by fcavillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,25 @@ void	ft_init_dir(t_all *all)
     }	
 }
 
+void    ft_ray_init_3(t_all *all)
+{
+  if (all->ray.raydiry == 0)
+    all->ray.deltadistx = 0;
+  else if (all->ray.raydirx == 0)
+    all->ray.deltadistx = 1;
+  else
+    all->ray.deltadistx = sqrt(1 + (all->ray.raydiry * all->ray.raydiry)
+      / (all->ray.raydirx * all->ray.raydirx));
+  if (all->ray.raydirx == 0)
+    all->ray.deltadisty = 0;
+  else if (all->ray.raydiry == 0)
+    all->ray.deltadisty = 1;
+  else
+    all->ray.deltadisty = sqrt(1 + (all->ray.raydirx * all->ray.raydirx)
+      / (all->ray.raydiry * all->ray.raydiry));      
+    
+}
+
 void    ft_ray_init_2(t_all *all)
 {
     all->ray.hit = 0;
@@ -46,7 +65,11 @@ void    ft_ray_init_2(t_all *all)
     all->ray.camerax = 2 * all->ray.x / (double)all->win.x - 1;
     all->ray.raydirx = all->ray.raydirx / all->ray.planx * all->ray.camerax;
     all->ray.raydiry = all->ray.raydiry / all->ray.plany * all->ray.camerax;
-    
+    all->ray.mapx = all->ray.posx;
+    all->ray.mapy  = all->ray.posy;
+    all->ray.movespeed = 0.1;
+    all->ray.rotspeed = 0.033 * 1.8;
+    ft_ray_init_3(all);    
 }
 
 void    ft_ray_init(t_all *all)
